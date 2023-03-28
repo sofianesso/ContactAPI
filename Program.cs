@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=ContactFormDb.db"));
 
@@ -12,7 +11,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactPolicy", builder =>
     {
-        builder.WithOrigins("http://localhost:3000") // Replace with your React app's URL
+        builder.WithOrigins("http://localhost:3000") //REACT-URL
                .AllowAnyHeader()
                .AllowAnyMethod()
                .AllowCredentials();
