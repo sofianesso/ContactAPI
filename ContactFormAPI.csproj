@@ -9,6 +9,15 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
+    <Compile Remove="functions\**" />
+    <Content Remove="functions\**" />
+    <EmbeddedResource Remove="functions\**" />
+    <None Remove="functions\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="firebase.json" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.4">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -20,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove=".firebaserc" />
     <None Remove="Models\" />
     <None Remove="Controllers\" />
   </ItemGroup>
